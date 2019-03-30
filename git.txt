@@ -1,0 +1,30 @@
+在对本地库中的文件执行修改后，想git push推送到远程库中，结果在git push的时候提示出错：
+
+! [rejected] master -> master (fetch first) 
+error: 无法推送一些引用到 ‘git@github.com:shuailisha/git_share.git’ 
+提示：更新被拒绝，因为远程版本库包含您本地尚不存在的提交。这通常是因为另外 
+提示：一个版本库已推送了相同的引用。再次推送前，您可能需要先合并远程变更 
+提示：（如 ‘git pull’）。 
+提示：详见 ‘git push –help’ 中的 ‘Note about fast-forwards’ 小节。 
+
+
+解决方案： 
+因为当前分支的最新提交落后于其对应的远程分支，所以我们先从远程库fetch到更新再和本地库合并，之后就可以git push操作了。
+
+git fetch origin
+git merge origin/master
+
+--------------------- 
+问题二:
+
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+
+解决办法:     fff 是 Repositories 的名字         或手动在github 上创建
+git remote add origin git@github.com:wmtbayern/fff.git
+
+git push -u origin master
