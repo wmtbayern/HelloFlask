@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+<h1>
+    这里是首页
+    {% if name %}
+    {{ name }}
+    {% else %}
+        游客
+    {% endif %}
+</h1>
+{{ content }}
+</body>
+</html>
+{# 宏定义  ,其实就是一个函数 #}
+{% macro say() %}
+    <p>hello</p>
+{% endmacro %}
+
+{#{% from ''  import say %}#}
