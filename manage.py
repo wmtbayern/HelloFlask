@@ -1,4 +1,4 @@
-from flask_migrate import MigrateCommand
+from flask_migrate import MigrateCommand, Migrate
 from flask_script import Manager
 
 #flask_script(第一个插件)
@@ -17,7 +17,7 @@ app = create_app()
 #实例化Manager,参数是flask实例化出来的对象
 
 manager=Manager(app)
-
+migrate=Migrate(app)
 manager.add_command('db',MigrateCommand)
 
 if __name__ == '__main__':

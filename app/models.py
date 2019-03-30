@@ -8,9 +8,7 @@
 #python 的 ORM  (SQLAlchemy)
 from flask_sqlalchemy import SQLAlchemy
 
-from app.extends import db
-
-db=SQLAlchemy()
+from app.exts import db
 
 
 class Student(db.Model):

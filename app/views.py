@@ -1,6 +1,13 @@
 from flask import Blueprint, request, make_response, url_for, redirect, abort, render_template, session
 
+
+
 blue=Blueprint('simple_page',__name__)
+
+
+def init_view(app):
+    app.register_blueprint(blueprint=blue)
+
 #simple_page   相当于django里面的  namespace
 
 #可以多个路由指向一个视图函数
